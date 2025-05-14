@@ -198,7 +198,7 @@ Part 1b - Step 2: Assignment
 
 Thing 1) TV
 5 properties:
-    1) broadcast channel
+    1) broadcasted channel
     2) volume level
     3) amount of display ports
     4) internet connection
@@ -308,7 +308,8 @@ Example:
 ===================
 Part 1c - Step 2: Assignment
 ===================
-    - write the name of the primitive type you'll be using after each property in UDTs 1-4 you created in Part 1b:
+    - write the name of the primitive type you'll be using after each property in UDTs 
+    1-4 you created in Part 1b:
     - pick properties that can be represented with 'int float double bool char std::string'.
     
 example: 
@@ -318,6 +319,18 @@ example:
         Brightness (double)
         area in cm2 (int)
         brand (std::string)
+
+Ports:
+5 properties:
+        USB 
+        HDMI
+        Optical/Cable in
+        LAN
+        Power
+3 things it can do:
+        receive TV signal
+        connect to the internet
+        project laptop´s display
 */
 
 /*
