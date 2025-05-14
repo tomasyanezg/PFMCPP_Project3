@@ -198,11 +198,11 @@ Part 1b - Step 2: Assignment
 
 Thing 1) TV
 5 properties:
-    1) broadcasted channel
-    2) volume level
-    3) amount of display ports
-    4) internet connection
-    5) amount of smartTV apps
+    1) broadcasted channel (int)
+    2) volume level (int)
+    3) amount of display ports (int)
+    4) internet connection (bool)
+    5) amount of smartTV apps (number)
 3 things it can do:
     1) increase/decrease volume
     2) select specific channel to be broadcast
@@ -210,11 +210,11 @@ Thing 1) TV
 
 Thing 2) Laptop
 5 properties:
-    1) screen display brightness
-    2) keyboard lights
-    3) mousepad sensitivity
-    4) battery left percentage
-    5) amount of USB ports
+    1) screen display brightness (int)
+    2) keyboard lights (bool)
+    3) mousepad sensitivity (int)
+    4) battery left percentage (int)
+    5) amount of USB ports (int)
 3 things it can do:
     1) set desired screen brightness
     2) toggle keyboard lights on/off    
@@ -222,11 +222,11 @@ Thing 2) Laptop
 
 Thing 3)Supermarket
 5 properties:
-    1) amount of vegetables
-    2) amount of fruits
-    3) amount of workers
-    4) max storage capacity
-    5) address/location 
+    1) amount of vegetables (int)
+    2) amount of fruits (int)
+    3) amount of workers (int)
+    4) max storage capacity (double)
+    5) address/location (std::string)
 3 things it can do:
     1) get new vegetables
     2) get new fruits
@@ -234,11 +234,11 @@ Thing 3)Supermarket
 
 Thing 4) Cinema
 5 properties:
-    1) amount of seats
-    2) weekly amount of popcorn usage
-    3) amount of halls/screens
-    4) name of the latest released movie
-    5) weekly amount of customers
+    1) amount of seats (int)
+    2) weekly amount of popcorn usage (double)
+    3) amount of halls/screens (int)
+    4) name of the latest released movie (std::string)
+    5) weekly amount of customers (double)
 3 things it can do:
     1) charge popcorn serving
     2) set amount of available halls
