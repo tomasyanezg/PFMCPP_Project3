@@ -196,53 +196,53 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
+Thing 1) TV
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) broadcast channel
+    2) volume level
+    3) amount of display ports
+    4) internet connection
+    5) amount of smartTV apps
 3 things it can do:
-    1)
-    2)
-    3)
+    1) increase/decrease volume
+    2) select specific channel to be broadcast
+    3) change between display ports
 
-Thing 2)
+Thing 2) Laptop
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) screen display brightness
+    2) keyboard lights
+    3) mousepad sensitivity
+    4) battery left percentage
+    5) amount of USB ports
 3 things it can do:
-    1)
-    2)
-    3)
+    1) set desired screen brightness
+    2) toggle keyboard lights on/off    
+    3) increase/decrease mousepad sensitivity
 
-Thing 3)
+Thing 3)Supermarket
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) amount of vegetables
+    2) amount of fruits
+    3) amount of workers
+    4) max storage capacity
+    5) address/location 
 3 things it can do:
-    1)
-    2)
-    3)
+    1) get new vegetables
+    2) get new fruits
+    3) change max storage capacity
 
-Thing 4)
+Thing 4) Cinema
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) amount of seats
+    2) weekly amount of popcorn usage
+    3) amount of halls/screens
+    4) name of the latest released movie
+    5) weekly amount of customers
 3 things it can do:
-    1)
-    2)
-    3)
+    1) charge popcorn serving
+    2) set amount of available halls
+    3) change latest released movie    
 */
 
 /*
