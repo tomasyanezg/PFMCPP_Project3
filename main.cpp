@@ -320,17 +320,6 @@ example:
         area in cm2 (int)
         brand (std::string)
 
-Ports:
-5 properties:
-        USB 
-        HDMI
-        Optical/Cable in
-        LAN
-        Power
-3 things it can do:
-        receive TV signal
-        connect to the internet
-        project laptop´s display
 */
 
 /*
@@ -352,11 +341,11 @@ Define an object that is made of 5 sub-objects.
 
 Thing 10) Restaurant
 5 properties:
-    1) employees
-    2) customers
-    3) main dishes 
-    4) desserts
-    5) beverages
+    1) employee
+    2) customer
+    3) main dish 
+    4) dessert
+    5) beverage
 3 things it can do:
     1) serve food and drinks
     2) reserve a table for x customers
@@ -447,65 +436,65 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
+Thing 5) employee
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) amount of employees (int)
+    2) weekly worked hours (double)
+    3) social securty number (int)
+    4) full name (std::string)
+    5) years of experience (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) serve dish
+    2) prepare ingredients
+    3) organize inventory
 
-Thing 6)
+Thing 6) customer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) amount of custumers (int)
+    2) prior reservation (bool)
+    3) full name (std::string)
+    4) payment in cash or with card (bool)
+    5) bill to be paid (float)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) pay bill
+    2) eat food
+    3) drink beverage
 
-Thing 7)
+Thing 7) main dish
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) price (float)
+    2) ingredients (std::string)
+    3) for how many people (int)
+    4) menu option (bool)
+    5) vegen (bool)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) fill customers´s hunger
+    2) induce allergic reaction
+    3) make customer sick
 
-Thing 8)
+Thing 8) dessert
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) price (float)
+    2) allergies (std::string)
+    3) served cold or warm (bool)
+    4) to go or to eat here (bool)
+    5) in cup or cone (bool)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) make customer happy
+    2) make customer sick
+    3) melt 
 
-Thing 9)
+Thing 9) beverage
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) cold or warm (bool)
+    2) price (float)
+    3) with alcohol (bool)
+    4) name (std::string)
+    5) amount of drinks
 3 things it can do:
-    1)
-    2)
-    3)
+    1) make custumer tipsy
+    2) warm custumer up
+    3) make food taste better
  */
 
 /*
