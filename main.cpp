@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1) TV
-5 properties:
-    1) broadcasted channel (int)
-    2) volume level (int)
-    3) amount of display ports (int)
-    4) internet connection (bool)
-    5) amount of smartTV apps (number)
-3 things it can do:
-    1) increase/decrease volume
-    2) select specific channel to be broadcast
-    3) change between display ports
 
-Thing 2) Laptop
-5 properties:
-    1) screen display brightness (int)
-    2) keyboard lights (bool)
-    3) mousepad sensitivity (int)
-    4) battery left percentage (int)
-    5) amount of USB ports (int)
-3 things it can do:
-    1) set desired screen brightness
-    2) toggle keyboard lights on/off    
-    3) increase/decrease mousepad sensitivity
-
-Thing 3)Supermarket
-5 properties:
-    1) amount of vegetables (int)
-    2) amount of fruits (int)
-    3) amount of workers (int)
-    4) max storage capacity (double)
-    5) address/location (std::string)
-3 things it can do:
-    1) get new vegetables
-    2) get new fruits
-    3) change max storage capacity
-
-Thing 4) Cinema
-5 properties:
-    1) amount of seats (int)
-    2) weekly amount of popcorn usage (double)
-    3) amount of halls/screens (int)
-    4) name of the latest released movie (std::string)
-    5) weekly amount of customers (double)
-3 things it can do:
-    1) charge popcorn serving
-    2) set amount of available halls
-    3) change latest released movie    
 */
 
 /*
@@ -320,6 +274,8 @@ example:
         area in cm2 (int)
         brand (std::string)
 
+
+
 */
 
 /*
@@ -339,17 +295,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10) Restaurant
-5 properties:
-    1) employee
-    2) customer
-    3) main dish 
-    4) dessert
-    5) beverage
-3 things it can do:
-    1) serve food and drinks
-    2) reserve a table for x customers
-    3) charge customers in cash or with card
+
  */
 
  /*
@@ -436,6 +382,110 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
+
+ */
+
+/*
+=================
+Part 1d - Step 3: Commit
+=================
+Now that you've made changes to the code, make a commit!
+Be sure to make the commit message meaningful.
+*/
+
+/*
+================
+Part 1d - Step 4: Assignment
+================
+    - write the name of the primitive type you'll be using after each property for UDTs 5 - 9.
+    - You already did this for UDTs 1-4 in Part 1c.
+    - Pick properties that can be represented with 'int float double bool char std::string'
+    
+example: 
+    Display:
+        Number of Pixels (int)
+        Amount of Power consumed (milliwatt-hours) (float)
+        Brightness (double)
+        width in cm (int)
+        height in cm (int)
+*/
+
+/*
+=================
+Part 1d - Step 5: Commit
+=================
+Now that you've made changes to the code, make a commit!
+Be sure to make the commit message meaningful.
+*/
+
+/*
+===================
+Part 1d - Step 6: assignment
+===================
+You've just defined 10 UDTs!
+4 of them are unrelated (UDTs 1-4).
+5 of them form the sub-objects that make up the 10th UDT. 
+
+MOVE THEM to the space below this block comment and put them in numerical order 
+(1 - 10).
+    DO NOT COPY. 
+    CUT AND PASTE. 
+    I do not want to see 2 copies of your Plain-English UDTs.  
+    I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
+    simply CUT and PASTE them in the space provided below:
+*/
+
+
+/*
+
+Thing 1) TV
+5 properties:
+    1) broadcasted channel (int)
+    2) volume level (int)
+    3) amount of display ports (int)
+    4) internet connection (bool)
+    5) amount of smartTV apps (number)
+3 things it can do:
+    1) increase/decrease volume
+    2) select specific channel to be broadcast
+    3) change between display ports
+
+Thing 2) Laptop
+5 properties:
+    1) screen display brightness (int)
+    2) keyboard lights (bool)
+    3) mousepad sensitivity (int)
+    4) battery left percentage (int)
+    5) amount of USB ports (int)
+3 things it can do:
+    1) set desired screen brightness
+    2) toggle keyboard lights on/off    
+    3) increase/decrease mousepad sensitivity
+
+Thing 3)Supermarket
+5 properties:
+    1) amount of vegetables (int)
+    2) amount of fruits (int)
+    3) amount of workers (int)
+    4) max storage capacity (double)
+    5) address/location (std::string)
+3 things it can do:
+    1) get new vegetables
+    2) get new fruits
+    3) change max storage capacity
+
+Thing 4) Cinema
+5 properties:
+    1) amount of seats (int)
+    2) weekly amount of popcorn usage (double)
+    3) amount of halls/screens (int)
+    4) name of the latest released movie (std::string)
+    5) weekly amount of customers (double)
+3 things it can do:
+    1) charge popcorn serving
+    2) set amount of available halls
+    3) change latest released movie    
+
 Thing 5) employee
 5 properties:
     1) amount of employees (int)
@@ -495,66 +545,19 @@ Thing 9) beverage
     1) make custumer tipsy
     2) warm custumer up
     3) make food taste better
- */
 
-/*
-=================
-Part 1d - Step 3: Commit
-=================
-Now that you've made changes to the code, make a commit!
-Be sure to make the commit message meaningful.
-*/
-
-/*
-================
-Part 1d - Step 4: Assignment
-================
-    - write the name of the primitive type you'll be using after each property for UDTs 5 - 9.
-    - You already did this for UDTs 1-4 in Part 1c.
-    - Pick properties that can be represented with 'int float double bool char std::string'
+Thing 10) Restaurant
+5 properties:
+    1) employee
+    2) customer
+    3) main dish 
+    4) dessert
+    5) beverage
+3 things it can do:
+    1) serve food and drinks
+    2) reserve a table for x customers
+    3) charge customers in cash or with card
     
-example: 
-    Display:
-        Number of Pixels (int)
-        Amount of Power consumed (milliwatt-hours) (float)
-        Brightness (double)
-        width in cm (int)
-        height in cm (int)
-*/
-
-/*
-=================
-Part 1d - Step 5: Commit
-=================
-Now that you've made changes to the code, make a commit!
-Be sure to make the commit message meaningful.
-*/
-
-/*
-===================
-Part 1d - Step 6: assignment
-===================
-You've just defined 10 UDTs!
-4 of them are unrelated (UDTs 1-4).
-5 of them form the sub-objects that make up the 10th UDT. 
-
-MOVE THEM to the space below this block comment and put them in numerical order 
-(1 - 10).
-    DO NOT COPY. 
-    CUT AND PASTE. 
-    I do not want to see 2 copies of your Plain-English UDTs.  
-    I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
-    simply CUT and PASTE them in the space provided below:
-*/
-
-
-
-
-
-
-
-
-/*
 =================
 Part 1d - Step 7: Commit
 =================
