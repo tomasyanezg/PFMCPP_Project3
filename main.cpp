@@ -624,6 +624,189 @@ Notice that the struct name 'CarWash' conforms with the Course Coding Standard, 
 */
 
 /*
+Thing 1) TV
+5 properties:
+    1) broadcasted channel (int)
+    2) volume level (int)
+    3) amount of display ports (int)
+    4) internet connection (bool)
+    5) amount of smartTV apps (int)
+3 things it can do:
+    1) increase/decrease volume
+    2) select specific channel to be broadcast
+    3) change between display ports
+*/
+struct TV
+{
+    
+};
+
+/*
+Thing 2) Laptop
+5 properties:
+    1) screen display brightness (int)
+    2) keyboard lights (bool)
+    3) mousepad sensitivity (int)
+    4) model and manufacturer (std::string) 
+    5) processor specs e.g.: Hz, kernels, company (std::string)
+3 things it can do:
+    1) set desired screen brightness
+    2) toggle keyboard lights on/off    
+    3) increase/decrease mousepad sensitivity
+*/
+
+struct Laptop
+{
+    
+};
+
+/*
+Thing 3)Supermarket
+5 properties:
+    1) amount of vegetables (int)
+    2) amount of fruits (int)
+    3) amount of workers (int)
+    4) max storage capacity (double)
+    5) address/location (std::string)
+3 things it can do:
+    1) get new vegetables
+    2) get new fruits
+    3) change max storage capacity
+*/
+struct Supermarket
+{
+    
+};
+
+/*
+Thing 4) Cinema
+5 properties:
+    1) amount of seats (int)
+    2) weekly amount of popcorn usage (double)
+    3) amount of halls/screens (int)
+    4) name of the latest released movie (std::string)
+    5) weekly amount of customers (double)
+3 things it can do:
+    1) charge popcorn serving
+    2) set amount of available halls
+    3) change latest released movie    
+*/
+struct Cinema
+{
+    
+};
+
+/*
+Thing 5) employee
+5 properties:
+    1) amount of employees (int)
+    2) weekly worked hours (double)
+    3) social securty number (int)
+    4) full name (std::string)
+    5) years of experience (int)
+3 things it can do:
+    1) serve dish
+    2) prepare ingredients
+    3) organize inventory
+*/
+struct Employee
+{
+    
+};
+
+/*
+Thing 6) customer
+5 properties:
+    1) amount of custumers (int)
+    2) prior reservation (bool)
+    3) full name (std::string)
+    4) payment in cash or with card (bool)
+    5) bill to be paid (float)
+3 things it can do:
+    1) pay bill
+    2) eat food
+    3) drink beverage
+*/
+struct Customer
+{
+    
+};
+
+/*
+Thing 7) main dish
+5 properties:
+    1) price (float)
+    2) ingredients (std::string)
+    3) for how many people (int)
+    4) menu option (bool)
+    5) vegen (bool)
+3 things it can do:
+    1) fill customers´s hunger
+    2) induce allergic reaction
+    3) make customer sick
+*/
+struct MainDish
+{
+    
+};
+
+/*
+Thing 8) dessert
+5 properties:
+    1) price (float)
+    2) allergies (std::string)
+    3) served cold or warm (bool)
+    4) to go or to eat here (bool)
+    5) in cup or cone (bool)
+3 things it can do:
+    1) make customer happy
+    2) make customer sick
+    3) melt 
+
+*/
+struct Dessert
+{
+    
+};
+
+/*    
+Thing 9) beverage
+5 properties:
+    1) cold or warm (bool)
+    2) price (float)
+    3) with alcohol (bool)
+    4) name (std::string)
+    5) amount of drinks
+3 things it can do:
+    1) make custumer tipsy
+    2) warm custumer up
+    3) make food taste better
+*/
+struct Beverage
+{
+    
+};
+
+/*
+Thing 10) Restaurant
+5 properties:
+    1) employee
+    2) customer
+    3) main dish 
+    4) dessert
+    5) beverage
+3 things it can do:
+    1) serve food and drinks
+    2) reserve a table for x customers
+    3) charge customers in cash or with card
+
+*/
+struct Restaurant
+{
+    
+};
+    
+/*
 =================
 Part 1e - Step 2: Commit
 =================
