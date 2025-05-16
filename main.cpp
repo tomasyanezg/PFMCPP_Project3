@@ -444,7 +444,7 @@ Thing 1) TV
     2) volume level (int)
     3) amount of display ports (int)
     4) internet connection (bool)
-    5) amount of smartTV apps (number)
+    5) amount of smartTV apps (int)
 3 things it can do:
     1) increase/decrease volume
     2) select specific channel to be broadcast
@@ -455,8 +455,8 @@ Thing 2) Laptop
     1) screen display brightness (int)
     2) keyboard lights (bool)
     3) mousepad sensitivity (int)
-    4) battery left percentage (int)
-    5) amount of USB ports (int)
+    4) model and manufacturer (std::string) 
+    5) processor specs e.g.: Hz, kernels, company (std::string)
 3 things it can do:
     1) set desired screen brightness
     2) toggle keyboard lights on/off    
