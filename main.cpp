@@ -1069,6 +1069,239 @@ struct CarWash
     //    - charge customer
     //    - detail the car interior
 };
+
+
+/*
+Thing 1) TV
+*/
+struct TV
+{    
+    //1) broadcasted channel (int)
+    int broadcastedChannel = 25;
+    //2) volume level (int)
+    int volumeLevel = 61;
+    //3) amount of display ports (int)
+    int amountDisplayPorts = 3;
+    //4) internet connection (bool)
+    bool internetConnection = true;
+    //5) amount of smartTV apps (int)
+    int amountSmartTVApps = 7;
+    /*
+    3 things it can do:
+        1) increase/decrease volume
+        2) select specific channel to be broadcast
+        3) change between display ports
+    */
+};
+
+/*
+Thing 2) Laptop
+*/
+struct Laptop
+{
+    //1) screen display brightness (int)
+    int screenDisplayBrightness = 95;    
+    //2) keyboard lights (bool)
+    bool keyboardLights = true;
+    //3) mousepad sensitivity (int)
+    int mousepadSensitivity = 8;
+    //4) model and manufacturer (std::string) 
+    std::string modelManufacturer = "Dell, Inspiron 15";
+    //5) processor specs e.g.: Hz, kernels, company (std::string)
+    std::string processorSpecs = "Intel(R) Core(TM) i3 CPU @ 2.40GHz";
+    /*
+    3 things it can do:
+        1) set desired screen brightness
+        2) toggle keyboard lights on/off    
+        3) increase/decrease mousepad sensitivity
+    */
+};
+
+/*
+Thing 3)Supermarket
+*/
+struct Supermarket
+{
+    //1) amount of vegetables (int)
+    int amountVegetables = 25; //(kg)
+    //2) amount of fruits (int)
+    int amountFruits = 15; //(kg)
+    //3) amount of workers (int)
+    int amountWorkers = 6;
+    //4) max storage capacity (double)
+    double maxStorageCapacity = 525.50; //(kg)
+    //5) address/location (std::string)
+    std::string address = "Grand Tree Street 54, Cherry Town, 22562";
+    /*
+    3 things it can do:
+        1) get new vegetables
+        2) get new fruits
+        3) change max storage capacity
+    */
+};
+
+/*
+Thing 4) Cinema
+*/
+struct Cinema
+{    
+    //1) amount of seats (int)
+    int amountSeats = 82; //per hall
+    //2) weekly amount of popcorn usage (double)
+    double weeklyAmountPopcorn = 1200.00; //servings
+    //3) amount of halls/screens (int)
+    int amountScreens = 5;
+    //4) name of the latest released movie (std::string)
+    std::string latestRelease = "The Double Standard by Michaelo DeLonginni";
+    //5) weekly amount of customers (double)
+    double weeklyCustomers = 1500.00; 
+    /*
+    3 things it can do:
+        1) charge popcorn serving
+        2) set amount of available halls
+        3) change latest released movie    
+    */
+};
+
+/*
+Thing 5) employee
+*/
+struct Employee
+{
+    //1) amount of employees (int)
+    int amountEmployees = 1;
+    //2) weekly worked hours (double)
+    double weeklyWorkedHours = 50;
+    //3) social security number (int)
+    int socialSecurityNumber = 124565228;
+    //4) full name (std::string)
+    std::string = "Christopher Calimbis";  
+    //5) years of experience (int)
+    int yearsOfExperience = 1;
+    /*
+    3 things it can do:
+        1) serve dish
+        2) prepare ingredients
+        3) organize inventory
+    */
+};
+
+/*
+Thing 6) customer
+*/
+struct Customer
+{
+    //1) amount of custumers (int)
+    int amountCustomers = 2;
+    //2) prior reservation (bool)
+    bool priorReservation = true;
+    //3) full name (std::string)
+    std::string fullName = "Edgar Bossio";
+    //4) payment in cash or with card (bool)
+    bool paymentInCash = false;
+    //5) bill to be paid (float)
+    float bill = 87.45;
+    /*
+    3 things it can do:
+        1) pay bill
+        2) eat food
+        3) drink beverage
+    */
+};
+
+/*
+Thing 7) main dish
+*/
+struct MainDish
+{
+    //1) price (float)
+    float price = 12.50   
+    //2) ingredients (std::string)
+    std::string ingredients = "flour, sugar, ground cinnamon, eggs, milk, carrot";  
+    //3) for how many people (int)
+    int forHowMany = 2;  
+    //4) menu option (bool)
+    bool menuOption = true;   //milkshake + prezels  
+    //5) vegan (bool)
+    bool vegan = false;
+    /*
+    3 things it can do:
+        1) fill customers´s hunger
+        2) induce allergic reaction
+        3) make customer sick
+    */
+};
+
+/*
+Thing 8) dessert
+*/
+struct Dessert
+{
+    //1) price (float)
+    float price = 8.75;
+    //2) allergies (std::string)
+    std::string allergies = "peanuts, almond";
+    //3) served cold or warm (bool)
+    bool servedWarm = false;   
+    //4) to go or to eat here (bool)
+    bool takeToGo = true;  
+    //5) in cup or cone (bool)
+    bool inCup = true;
+    /*
+    3 things it can do:
+        1) make customer happy
+        2) make customer sick
+        3) melt 
+    */
+};
+
+/*    
+Thing 9) beverage
+*/
+struct Beverage
+{
+    //1) cold or warm (bool)
+    bool cold = true;  
+    //2) price (float)
+    float price = 4.99;  
+    //3) with alcohol (bool)
+    bool withAlcohol = yes;  
+    //4) name (std::string)
+    std::string name = "Heiniken";  
+    //5) amount of drinks
+    int amountDrinks = 5;
+    /*
+    3 things it can do:
+        1) make custumer tipsy
+        2) warm custumer up
+        3) make food taste better
+    */
+};
+
+/*
+Thing 10) Restaurant
+*/
+struct Restaurant
+{
+    //1) employees
+    int amountEmployees = 10;  
+    //2) customer
+    int amountCustomers = 75;  
+    //3) main dish 
+    int availableMainDishes = 12;  
+    //4) dessert
+    int availableDessets = 5;
+    //5) beverage
+    int availableBeverages = 10;
+    /*
+    3 things it can do:
+        1) serve food and drinks
+        2) reserve a table for x customers
+        3) charge customers in cash or with card
+    */
+};
+
+    
 /*
 
 =================
