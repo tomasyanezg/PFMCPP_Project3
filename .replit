@@ -19,4 +19,4 @@ mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "clang++ -std=c++17 -Weverything -Wno-c++98-compat -Wno-missing-prototypes main.cpp && ./a.out"
+args = "clang++ -std=c++17 -Weverything -Wno-padded -Wno-c++98-compat -Wno-missing-prototypes main.cpp && ./a.out"
