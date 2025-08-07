@@ -108,7 +108,7 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
-struct Feet 
+struct Foot 
 {
     void stepForward()
     {
@@ -128,8 +128,8 @@ struct Person
     float GPA;
     unsigned int SATScore;
     int distanceTraveled;
-    Feet leftFoot;
-    Feet rightFoot;
+    Foot leftFoot;
+    Foot rightFoot;
 
     void run (int howFast, bool startWithLeftFoot);
 };
@@ -146,7 +146,7 @@ void Person::run(int howFast, bool startWithLeftFoot)
         rightFoot.stepForward();
         leftFoot.stepForward();
     }
-    distanceTraveled += leftFoot.stepSize()* howFast + rightFoot.stepSize()* howFast;
+    distanceTraveled += leftFoot.stepSize() * howFast + rightFoot.stepSize() * howFast;
 }
 
  /*
@@ -338,15 +338,16 @@ struct Cinema
     std::string latestRelease = "The Double Standard by Michaelo DeLonginni";
     double weeklyCustomers = 1500.00; 
 
-    float chargePopcorn (int amountPopcornServings, bool inCash);
+    float chargePopcorn (float amountPopcornServings, bool inCash);
     void availableScreens (int amountScreens);  
     void latestMovie (std::string latestRelease);
 };
 
-float Cinema::chargePopcorn(int amountPopcornServings, bool inCash)
+float Cinema::chargePopcorn(float amountPopcornServings, bool inCash)
 {
     std::cout << "The amount of popcorn serving to be made are : " << amountPopcornServings << inCash << std::endl;
-    return 2.99f * static_cast<float>(amountPopcornServings);
+    
+    return 2.99f * amountPopcornServings;
 }
 
 void Cinema::availableScreens(int newAmountScreens)
