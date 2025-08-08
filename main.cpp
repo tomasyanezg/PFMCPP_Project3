@@ -108,9 +108,46 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Foot 
+{
+    void stepForward()
+    {
+        std::cout << "Step forward" << std::endl;
+    }
+    int stepSize()
+    {
+        return 10;
+    }
+};
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
+    Foot leftFoot;
+    Foot rightFoot;
 
+    void run (int howFast, bool startWithLeftFoot);
+};
 
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+    if(startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += leftFoot.stepSize() * howFast + rightFoot.stepSize() * howFast;
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -131,20 +168,12 @@ struct CarWash
  This usually means you have to use identical types for all variables used in an expression that is producing that conversion warning.
  */
 
-/*
-Thing 1) TV
-*/
 struct TV
 {    
-    //1) broadcasted channel (int)
     int broadcastedChannel = 25;
-    //2) volume level (int)
     int volumeLevel = 61;
-    //3) amount of display ports (int)
     int amountDisplayPorts = 3;
-    //4) internet connection (bool)
     bool internetConnection = true;
-    //5) amount of smartTV apps (int)
     int amountSmartTVApps = 7;
 
     struct SmartTVApp
@@ -156,243 +185,346 @@ struct TV
         float price = 2.99f;
 
         void startApp ();
-        bool connectedToPhone (int phoneId, std::string phoneName); //Id = Mobile Equipment Identity (IMEI), returns true if connected
-        bool buyApp (int creditCard, std::string fullName, bool appAlreadyPaid = false); //returns true if app was bought 
+        bool connectedToPhone (int phoneId, std::string phoneName);
+        bool buyApp (int creditCard, std::string fullName, bool appAlreadyPaid = false);
     };
-
-    //3 things it can do:
-    //1) increase/decrease volume
-    int increaseVolume(int increment); //returns volumeLevel  
-    //2) select specific channel to be broadcast
-    int selectChannel (int channel, SmartTVApp AppName); //return broadcastedChannel or SmartTVApp
-    //3) change between display ports
-    void changeDisplayPort (); //no return, just toggle between ports 
+    int increaseVolume(int increment);
+    int selectChannel (int channel, SmartTVApp appName);
+    void changeDisplayPort ();
 
     SmartTVApp youtube;
 
 };
 
-/*
-Thing 2) Laptop
-*/
+int TV::increaseVolume(int increment)
+{
+    std::cout << "Volume increased by" << increment << std::endl;
+    return increment;    
+}
+
+int TV::selectChannel(int channel, SmartTVApp appName)
+{
+    std::cout << "Selected Channel" << channel << "with " << appName.appName << std::endl;
+    return channel;
+}
+
+void TV::changeDisplayPort()
+{
+    std::cout  << "Displayed port changed" << std::endl;       
+}
+
+void TV::SmartTVApp:: startApp()
+{
+    std::cout << "The following app was started: " << appName << std::endl;
+}
+
+bool TV::SmartTVApp::connectedToPhone(int phoneId, std::string phoneName)
+{
+    std::cout << "SmartTV connected to phone: " << phoneName << "and phone id :" << phoneId << std::endl;
+    return true;
+}
+
+bool TV::SmartTVApp::buyApp(int creditCard, std::string fullName, bool appAlreadyPaid)
+{
+    std::cout << "An app was bought with the following credit card: " << creditCard << "and name" << fullName << std::endl;
+    return appAlreadyPaid == true;
+}
+
+
+
 struct Laptop
 {
-    //1) screen display brightness (int)
     int screenDisplayBrightness = 95;    
-    //2) keyboard lights (bool)
     bool keyboardLights = true;
-    //3) mousepad sensitivity (int)
     int mousepadSensitivity = 8;
-    //4) model and manufacturer (std::string) 
     std::string modelManufacturer = "Dell, Inspiron 15";
-    //5) processor specs e.g.: Hz, kernels, company (std::string)
     std::string processorSpecs = "Intel(R) Core(TM) i3 CPU @ 2.40GHz";
 
-    struct soundSystem
+    struct SoundSystem
     {
         bool internalSoundSystem = false;
         std::string nameModel = "Teufel 5CT Theater";
-        int powerRequirements = 50; // (W)
+        int powerRequirements = 50; 
         int amountSpeakers = 4;
         bool boostedLows = true;
 
         void setEqualizer (float frequencyRangeMin, float frequencyRangeMax, float gain);
-        int toogleAudioOutput ();//returns number for the selected outpout eg.: 0 Laptop speakers, 1 Teufel speakers, 2 bluetooth
+        int toogleAudioOutput ();
         void mute ();
     };
 
-    //3 things it can do:
-    //1) set desired screen brightness
-    int setDisplayBrightness (int increment); //returns screenDisplayBrightness  
-    //2) toggle keyboard lights on/off    
+    int setDisplayBrightness (int increment);
     void keyboardLightsToggle();   
-    //3) increase/decrease mousepad sensitivity
-    int increaseMousepadSensitivity (int increment); //returns mousepadSensitivity
+    int increaseMousepadSensitivity (int increment);
 
-    soundSystem dolby;
+    SoundSystem dolby;
 
-    soundSystem initialize (soundSystem systemName); // returns soundSystem struct info/specs
-
+    SoundSystem initialize (SoundSystem systemName);
 };
 
-/*
-Thing 3)Supermarket
-*/
+int Laptop::setDisplayBrightness(int increment)
+{
+    std::cout << "Display brightness increased by : " << increment << std::endl;
+    return increment;
+}
+
+void Laptop::keyboardLightsToggle()
+{
+    std::cout << "Keyboard lights toggled" << std::endl;
+}
+
+int Laptop::increaseMousepadSensitivity(int increment)
+{
+    std::cout << "Mousepad sensitivity increased by :" << increment << std::endl;
+    return increment;
+}
+
+void Laptop::SoundSystem::setEqualizer(float frequencyRangeMin, float frequencyRangeMax, float gain)
+{
+    std::cout << "Equalizer set between frequencies :" << frequencyRangeMin << "and" << frequencyRangeMax << ". The gain was set to :" << gain << std::endl;
+}
+
+int Laptop::SoundSystem::toogleAudioOutput()
+{
+    std::cout << "Audio output toggled" << std::endl;
+    return 1;
+}
+
+void Laptop::SoundSystem::mute()
+{
+    std::cout << "Mute toggled" << std::endl;
+}
+
+
+
 struct Supermarket
 {
-    //1) amount of vegetables (int)
-    int amountVegetables = 25; //(kg)
-    //2) amount of fruits (int)
-    int amountFruits = 15; //(kg)
-    //3) amount of workers (int)
+    int amountVegetables = 25;
+    int amountFruits = 15;
     int amountWorkers = 6;
-    //4) max storage capacity (double)
-    double maxStorageCapacity = 525.50; //(kg)
-    //5) address/location (std::string)
+    double maxStorageCapacity = 525.50;
     std::string address = "Grand Tree Street 54, Cherry Town, 22562";
 
-    //3 things it can do:
-    //1) get new vegetables
-    int getNewVegetables (int incrementVegetables); //return amountOfVegetables
-    //2) get new fruits
-    int getNewFruits (int incrementFruits); //return amountVegetables    
-    //3) change max storage capacity
-    double changeMaxStorageCapacity (double newMaxStorageCapacity); //return maxStorageCapacity    
+    int getNewVegetables (int incrementVegetables);
+    int getNewFruits (int incrementFruits);
+    double changeMaxStorageCapacity (double newMaxStorageCapacity);  
 };
 
-/*
-Thing 4) Cinema
-*/
+int Supermarket::getNewVegetables(int incrementVegetables)
+{
+    std::cout << "Vegetables incremented by " << incrementVegetables << "kg." << std::endl;
+    return incrementVegetables;
+}
+
+int Supermarket::getNewFruits(int incrementFruits)
+{
+    std::cout << "Fruits incremented by " << incrementFruits << "kg." << std::endl;
+    return incrementFruits;
+}
+
+double Supermarket::changeMaxStorageCapacity(double newMaxStorageCapacity)
+{
+    std::cout << "The storage max capacity has been changed to : " << newMaxStorageCapacity << "kg." << std::endl;
+    return newMaxStorageCapacity;
+}
+
+
+
 struct Cinema
 {    
-    //1) amount of seats (int)
-    int amountSeats = 82; //per hall
-    //2) weekly amount of popcorn usage (double)
-    double weeklyAmountPopcorn = 1200.00; //servings
-    //3) amount of halls/screens (int)
+    int amountSeats = 82;
+    double weeklyAmountPopcorn = 1200.00;
     int amountScreens = 5;
-    //4) name of the latest released movie (std::string)
     std::string latestRelease = "The Double Standard by Michaelo DeLonginni";
-    //5) weekly amount of customers (double)
     double weeklyCustomers = 1500.00; 
 
-    //3 things it can do:
-    //1) charge popcorn serving
-    float chargePopcorn (int amountPopcornServings, bool inCash); //return price/bill  
-    //2) set amount of available halls/screens
+    float chargePopcorn (float amountPopcornServings, bool inCash);
     void availableScreens (int amountScreens);  
-    //3) change latest released movie    
     void latestMovie (std::string latestRelease);
 };
 
-/*
-Thing 5) employee
-*/
+float Cinema::chargePopcorn(float amountPopcornServings, bool inCash)
+{
+    std::cout << "The amount of popcorn serving to be made are : " << amountPopcornServings << inCash << std::endl;
+    
+    return 2.99f * amountPopcornServings;
+}
+
+void Cinema::availableScreens(int newAmountScreens)
+{
+    std::cout << "The amount of available of screen for today is : " << newAmountScreens << std::endl;
+}
+
+void Cinema::latestMovie(std::string newLatestRelease)
+{
+    std::cout << "The latest avaiable movie for today is : " << newLatestRelease << std::endl;
+}
+
+
+
 struct Employee
 {
-    //1) amount of employees (int)
     int amountEmployees = 1;
-    //2) weekly worked hours (double)
     double weeklyWorkedHours = 50;
-    //3) social security number (int)
     int socialSecurityNumber = 124565228;
-    //4) full name (std::string)
     std::string fullName = "Christopher Calimbis";  
-    //5) years of experience (int)
     int yearsOfExperience = 1;
 
-    //3 things it can do:
-    //1) serve dish
-    std::string serveDish (int amountCustomers, int tableNumber); //returns name of the Dish and the amount of portions to be served 
-    //2) prepare ingredients
+    std::string serveDish (int amountCustomers, int tableNumber);
     void prepareIngredients (std::string ingredients);  
-    //3) organize inventory
     void organizeInventory (int amountEmployees);
 };
 
-/*
-Thing 6) customer
-*/
+std::string Employee::serveDish(int amountCustomers, int tableNumber)
+{
+    std::cout << "Serve dish in table # : " << tableNumber << "for this amount of customer" << amountCustomers << std::endl;
+    return "Table served!";
+}
+
+void Employee::prepareIngredients(std::string ingredients)
+{
+    std::cout << "Prepare the following ingredients :" << ingredients << std::endl;
+}
+
+void Employee::organizeInventory(int newAmountEmployees)
+{
+    std::cout << "The inventory has to be organized by this amount of employees : " << newAmountEmployees << std::endl;
+}
+
+
+
 struct Customer
 {
-    //1) amount of custumers (int)
     int amountCustomers = 2;
-    //2) prior reservation (bool)
     bool priorReservation = true;
-    //3) full name (std::string)
     std::string fullName = "Edgar Bossio";
-    //4) payment in cash or with card (bool)
     bool paymentInCash = false;
-    //5) bill to be paid (float)
     float bill = 87.5f;
 
-    //3 things it can do:
-    //1) pay bill
-    float payBill (float bill, bool inCash); //returns amount to be paid and if in cash or card
-    //2) eat food
-    std::string eatFood (std::string mainDish, int amountDrinks);//returns state of the customer eg.: liked food, allergic reaction, wants more.
-    //3) drink beverage
-    std::string drinkBeverage (std::string beverageName, int amountDrinks);//returns state of customer
+    float payBill (float bill, bool inCash);
+    std::string eatFood (std::string mainDish, int amountDrinks);
+    std::string drinkBeverage (std::string beverageName, int amountDrinks);
 };
 
-/*
-Thing 7) main dish
-*/
+float Customer::payBill(float newBill, bool inCash)
+{
+    std::cout << "The amount to be paid is : " << newBill << inCash << std::endl;
+    return bill;
+}
+
+std::string Customer::eatFood(std::string mainDish, int amountDrinks)
+{
+    std::cout << "The customer is eating a " << mainDish << "together with " << amountDrinks << "drinks." << std::endl;
+    return mainDish;
+}
+
+std::string Customer::drinkBeverage(std::string beverageName, int amountDrinks)
+{
+    std::cout << "The customer drinks " << amountDrinks << beverageName << std::endl;
+    return beverageName;
+}
+
+
+
 struct MainDish
 {
-    //1) price (float)
     float price = 12.50f;   
-    //2) ingredients (std::string)
     std::string ingredients = "flour, sugar, ground cinnamon, eggs, milk, carrot";  
-    //3) for how many people (int)
     int forHowMany = 2;  
-    //4) menu option (bool)
-    bool menuOption = true;   //milkshake + prezels  
-    //5) vegan (bool)
+    bool menuOption = true;
     bool vegan = false;
 
-    //3 things it can do:
-    //1) fill customers´s hunger
-    bool satisfiedHunger(std::string mainDishName, bool menuOption); //return true for satiesfied hunger  
-    //2) induce allergic reaction
-    bool inducedAllergicReaction (std::string ingredients, bool vegan); //returns true for allergic reaction
-    //3) make customer sick
-    bool makesCustomerSick (std::string ingredients, bool decomposedFood); //returns true if customer is sick
+    bool satisfiedHunger(std::string mainDishName, bool menuOption);
+    bool inducedAllergicReaction (std::string ingredients, bool vegan);
+    bool makesCustomerSick (std::string ingredients, bool decomposedFood);
 };
 
-/*
-Thing 8) dessert
-*/
+bool MainDish::satisfiedHunger(std::string newMainDishName, bool newMenuOption)
+{
+    std::cout << "The customer was satisfied with the " << newMainDishName << std::endl;
+    return newMenuOption;
+}
+
+bool MainDish::inducedAllergicReaction(std::string newIngredients, bool isItVegan)
+{
+    std::cout << "Caution! This dish contains possible allergid ingredients :" << newIngredients << std::endl;
+    return isItVegan;
+}
+
+bool MainDish::makesCustomerSick(std::string newIngredients, bool decomposedFood)
+{
+    std::cout << "The following ingredients should be disposed : " << newIngredients << std::endl;
+    return decomposedFood;
+}
+
+
+
 struct Dessert
 {
-    //1) price (float)
     float price = 8.75f;
-    //2) allergies (std::string)
     std::string allergies = "peanuts, almond";
-    //3) served cold or warm (bool)
     bool servedWarm = false;   
-    //4) to go or to eat here (bool)
     bool takeToGo = true;  
-    //5) in cup or cone (bool)
     bool inCup = true;
 
-    //3 things it can do:
-    //1) make customer happy
-    bool makesCustomerHappy (std::string dessertName);//return true if customer is happy    
-    //2) make customer sick
-    bool makesCustomerSick (std::string dessertName, int amountDesserts);//returns true if customer is sick
-    //3) melt    
-    bool isDessertMelted (std::string dessertName, bool servedWarm = false );//returns true if dessert melted   
+    bool makesCustomerHappy (std::string dessertName);
+    bool makesCustomerSick (std::string dessertName, int amountDesserts);
+    bool isDessertMelted (std::string dessertName, bool servedWarm = false );
 };
 
-/*    
-Thing 9) beverage
-*/
+bool Dessert::makesCustomerSick(std::string dessertName, int amountDesserts)
+{
+    std::cout << "The dessert : " << dessertName << "after eating a total of " << amountDesserts << "made the customer sick." << std::endl;
+    return true;
+}
+
+bool Dessert::makesCustomerHappy(std::string dessertName)
+{
+    std::cout << "The dessert : " << dessertName << "was very tasty for the customer." << std::endl;
+    return true;
+}
+
+bool Dessert::isDessertMelted(std::string dessertName, bool isItServedWarm)
+{
+    std::cout << "You waited too long, the dessert " << dessertName << "melted." << std::endl;
+    return isItServedWarm;
+}
+
+
+
 struct Beverage
 {
-    //1) cold or warm (bool)
     bool cold = true;  
-    //2) price (float)
     float price = 4.99f;  
-    //3) with alcohol (bool)
     bool withAlcohol = true;  
-    //4) name (std::string)
     std::string name = "Heiniken";  
-    //5) amount of drinks
     int amountDrinks = 5;
 
-    //3 things it can do:
-    //1) make customer tipsy
-    bool makeCustomerTipsy (int amountDrinks, float alcoholPercentage);//returns true if customer is tipsy
-    //2) warms customer up
-    int warmsCustomer (bool withAlcohol, int amountDrinks); //return by how much the customer warmed up eg.: 2 C°   
-    //3) make food taste better
-    int makesFoodTasteBetter (std::string name, std::string mainDishName);//returns percentage of extra tip eg.: 10 (%)
+    bool makeCustomerTipsy (int amountDrinks, float alcoholPercentage);
+    int warmsCustomer (bool withAlcohol, int amountDrinks);
+    int makesFoodTasteBetter (std::string name, std::string mainDishName);
 };
 
-/*
-Thing 10) Restaurant
-*/
+bool Beverage::makeCustomerTipsy(int newAmountDrinks, float alcoholPercentage)
+{
+    std::cout << "After " << newAmountDrinks << "with a alcohol percentage of " << alcoholPercentage << "customer is looking typsy." << std::endl;
+    return true;
+}
+
+int Beverage::warmsCustomer(bool isItWithAlcohol, int newAmountDrinks)
+{
+    std::cout << "Customer is feeling warm after this amount of drinks" << newAmountDrinks << std::endl;
+    return isItWithAlcohol;
+}
+
+int Beverage::makesFoodTasteBetter(std::string newName, std::string mainDishName)
+{
+    std::cout << "The custome with the name " << newName << "ate " << mainDishName << std::endl;
+    return amountDrinks;
+}
+
+
+
 struct Restaurant
 {
     Employee markMinson;
@@ -401,15 +533,28 @@ struct Restaurant
     Dessert chocolateIcecream;
     Beverage familySizeIcetea;
 
-    //3 things it can do:
-    //1) serve food and drink
-    int serveFoodAndDrink (int amountCustomers, int amountMainDishes, int amountBeverages); //returns table number that got served    
-    //2) reserve a table for x customers
-    int reserveTable (std::string fullName, int amountCustomers, int tableNumber);//returns table number
-    //3) charge customer in cash or with card
-    bool chargeCustomer (float bill, bool inCash, int tableNumber); //returns true if bill was paid
+    int serveFoodAndDrink (int amountCustomers, int amountMainDishes, int amountBeverages);
+    int reserveTable (std::string fullName, int amountCustomers, int tableNumber);
+    bool chargeCustomer (float bill, bool inCash, int tableNumber);
 };
 
+int Restaurant::serveFoodAndDrink(int amountCustomers, int amountMainDishes, int amountBeverages)
+{
+    std::cout << "Customer served :" << amountCustomers << "amount of main dishesh " << amountMainDishes << "and drinks" << amountBeverages << std::endl;
+    return amountBeverages;
+}
+
+int Restaurant::reserveTable(std::string fullName, int amountCustomers, int tableNumber)
+{
+    std::cout << "Table # " << tableNumber << "for an amount of " << amountCustomers << "customers," << "was reserved under the name : " << fullName << std::endl;
+    return tableNumber;
+}
+
+bool Restaurant::chargeCustomer(float bill, bool inCash, int tableNumber)
+{
+    std::cout << "The customer in table #" << tableNumber << "has to pay : " << bill << "$." << std::endl;
+    return inCash;
+}
 
 
 int main()
